@@ -1,0 +1,52 @@
+body {
+    background-color: #ffffff;
+}
+
+.navbar {
+    background-color: #0d1b3e;
+}
+
+.navbar .navbar-item {
+    color: #ffffff;
+}
+
+.navbar .navbar-item:hover {
+    background-color: #1c2f5e;
+    color: #ffffff;
+}
+
+.title {
+    color: #0d1b3e;
+}
+
+.button {
+    background-color: #0d1b3e;
+    color: #ffffff;
+    border: none;
+}
+
+.button:hover {
+    background-color: #1c2f5e;
+    color: #ffffff;
+}
+
+.table thead th {
+    background-color: #0d1b3e;
+    color: #ffffff;
+}
+
+.footer {
+    background-color: #0d1b3e;
+    color: #ffffff;
+    padding: 1.5rem;
+}
+
+.box {
+    padding: 0;
+    overflow: hidden;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}

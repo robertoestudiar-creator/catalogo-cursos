@@ -17,6 +17,7 @@
                     <th>Profesor/a</th>
                     <th>Participantes</th>
                     <th>Plazas</th>
+                    <th>Plazas libres</th>
                     <th>Estado</th>
                 </tr>
             </thead>
@@ -28,13 +29,17 @@
                         <td><c:out value="${curso.profesor}"/></td>
                         <td>${curso.participantes}</td>
                         <td>${curso.plazas}</td>
+                        <td>${curso.plazas - curso.participantes}</td>
                         <td>
                             <c:choose>
-                                <c:when test="${curso.participantes < curso.plazas}">
-                                    Disponible
+                                <c:when test="${curso.participantes >= curso.plazas}">
+                                    Completo
+                                </c:when>
+                                <c:when test="${curso.plazas - curso.participantes <= 3}">
+                                    Últimas plazas
                                 </c:when>
                                 <c:otherwise>
-                                    Completo
+                                    Disponible
                                 </c:otherwise>
                             </c:choose>
                         </td>
@@ -42,6 +47,12 @@
                 </c:forEach>
             </tbody>
         </table>
+
+        <p>Total de cursos: ${cursos.size()}</p>
+
+        <c:if test="${cursos.size() >= 5}">
+            <p>Tenemos una amplia oferta de cursos este año.</p>
+        </c:if>
     </c:otherwise>
 </c:choose>
 

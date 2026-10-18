@@ -25,6 +25,7 @@ public class CatalogoServlet extends HttpServlet {
         );
 
         request.setAttribute("cursos", cursos);
+        request.setAttribute("pageTitle", "Catálogo de cursos");
         request.getRequestDispatcher("/WEB-INF/views/catalogo.jsp").forward(request, response);
     }
 }
